@@ -21,9 +21,11 @@ mongoose.connect(url, {
 app.use(morgan('dev'));
 app.use(bodyParser.json())
 // app.use(cors()); //allow acess from all domain (origin)
-if(process.env.NODE_ENV = 'development'){
-  app.use(cors({origin: 'http://localhost:3000'}));
-}
+// if(process.env.NODE_ENV = 'development'){
+//   app.use(cors({origin: 'http://localhost:3000'}));
+// }
+
+app.use(cors());  //to anable acces from any where
 //using midle ware
 app.use(authRouts);
 
