@@ -12,7 +12,7 @@ const {runValidation} = require('../validators');   //hear {../validators/index 
 //here we are using router from express.Router insted of app.get
 router.post("/signup", userSignupValidation, runValidation, signup);
 router.post("/accountActivation", accountActivation);
-router.post("/signin", userSigninValidation, runValidation, signin);
+router.post("/signin", userSigninValidation, runValidation, signin); 
 
 //forgot reset password
 router.put("/forgot-password", forgotPasswordValidation, runValidation, forgotPassword);

@@ -73,7 +73,7 @@ exports.signup = (req, res) => {
       email: 'darshanrangegowda19@gmail.com',
     };
 
-    const receivers = [
+    const receivers = [ 
       {
         email: email,
       },
@@ -84,7 +84,7 @@ exports.signup = (req, res) => {
       to: receivers,
       subject: 'Account activation link',
       htmlContent: `<h2>Click here for activation:</h2>
-           <p>${process.env.CLIENT_URL}/accountActivation/${token}</p>
+           <p>https://mern-login-client.onrender.com/accountActivation/${token}</p>
            <p>${process.env.CLIENT_URL}`
 
 
@@ -223,7 +223,7 @@ exports.forgotPassword = (req, res)=>{
             to: receivers,
             subject: 'Password reset link',
             htmlContent: `<h2>Click here to reset password:</h2>
-                 <p>${process.env.CLIENT_URL}/password/reset/${token}</p>
+                 <p>https://mern-login-client.onrender.com/password/reset/${token}</p>
                  <p>${process.env.CLIENT_URL}`
       
       
