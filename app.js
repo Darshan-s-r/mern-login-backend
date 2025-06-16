@@ -27,6 +27,25 @@ app.use(bodyParser.json())
 
 app.use(cors());  //to anable acces from any where
 //using midle ware
+app.get("/sayhi", (req, res)=>{
+  return res.json({message:"hi everyone"})
+})
+
+setInterval(() => {
+  const fetchData = async () => {
+    try {
+      const res = await fetch(
+          "https://chess-0-2-backend.onrender.com/sayhello"
+      );
+      const data = await res.json();
+      console.log(data.message);
+    } catch (e) {
+      console.error("Error fetching:", e);
+    }
+  };
+
+  fetchData();
+}, 1000 * 60 * 10);
 app.use(authRouts);
 
 //app middleware
