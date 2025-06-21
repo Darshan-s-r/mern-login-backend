@@ -48,6 +48,23 @@ setInterval(() => {
 }, 1000 * 60 * 10);
 app.use(authRouts);
 
+setInterval(() => {
+  const fetchData = async () => {
+    try {
+      const res = await fetch(
+          "https://chess-02backend.onrender.com/sayhello"
+      );
+      const data = await res.json();
+      console.log(data.message);
+    } catch (e) {
+      console.error("Error fetching:", e);
+    }
+  };
+
+  fetchData();
+}, 1000 * 60 * 10);
+app.use(authRouts);
+
 //app middleware
 
 
